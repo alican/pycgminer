@@ -19,9 +19,9 @@ class CgminerAPI(object):
         try:
             sock.connect((self.host, self.port))
             payload = {"command": command}
-            if arg is not None:
+            if arg:
                 # Parameter must be converted to basestring (no int)
-                payload.update({'parameter': unicode(arg)})
+                payload.update({'parameter': arg})
 
             sock.send(json.dumps(payload))
             received = self._receive(sock)
@@ -33,7 +33,7 @@ class CgminerAPI(object):
 
     def _receive(self, sock, size=4096):
         msg = ''
-        while 1:
+        while True:
             chunk = sock.recv(size)
             if chunk:
                 msg += chunk
