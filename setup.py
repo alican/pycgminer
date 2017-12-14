@@ -7,9 +7,9 @@ def read(fname):
 
 setup(
     name="pycgminer",
-    version="0.1.1",
-    author="Thomas Sileo",
-    author_email="thomas.sileo@gmail.com",
+    version="0.1.2",
+    author="Alican Toprak",
+    author_email="mail@alican.eu",
     description="Cgminer RPC API wrapper.",
     license="MIT",
     keywords="cgminer",
